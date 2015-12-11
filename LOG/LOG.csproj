@@ -184,6 +184,22 @@
         <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
         <Reference Include="System.Windows.Forms" />
         <Reference Include="System.Xml" />
+        <Reference Include="Microsoft.SqlServer.Dts.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>..\packages\Microsoft.SqlServer.DTS.12.0.0\lib\Microsoft.SqlServer.Dts.Design.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x64">
+          <SpecificVersion>True</SpecificVersion>
+          <EmbedInteropTypes>True</EmbedInteropTypes>
+          <Private>False</Private>
+          <HintPath>..\packages\Microsoft.SqlServer.DTS.12.0.0\lib\Microsoft.SQLServer.DTSRuntimeWrap.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>..\packages\Microsoft.SqlServer.DTS.12.0.0\lib\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -224,21 +240,6 @@
     <EmbeddedResource Include="Resources\log.ico">
       <LogicalName>log.ico</LogicalName>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.SqlServer.Dts.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.DTS.12.0.0\lib\Microsoft.SqlServer.Dts.Design.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=AMD64">
-      <HintPath>..\packages\Microsoft.SqlServer.DTS.12.0.0\lib\Microsoft.SqlServer.DTSRuntimeWrap.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.DTS.12.0.0\lib\Microsoft.SqlServer.ManagedDTS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
