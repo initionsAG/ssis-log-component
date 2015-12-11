@@ -15,7 +15,7 @@
 5. ![Control Flow](/resources/Control_Flow_LOG.PNG "Control Flow with connected LOG component")
 6. open and configure "LOG" component:
     * choose "Component Type" (initialize, information, item begin,...)
-    * add "Message Text" (like "DFT started")
+    * add "Message Text" (like "My Logging: DFT Start")
     * add any "Variable" you like to the message text (i.e. ContainerStartTime)
     * ![LOG_02](/resources/LOG_02.PNG "Edit LOG component")
 7. result is written to 
