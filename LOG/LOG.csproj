@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E60C8296-9418-4902-A35D-8EEAE8845396}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Isag.Log</RootNamespace>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Sql2008'">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>Resources\LOG.snk</AssemblyOriginatorKeyFile>
+        <AssemblyName>Isag.Log</AssemblyName>
+      </PropertyGroup>
+    </When>
+    <When Condition="'$(Configuration)' == 'Sql2012'">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>Resources\LOG_2012.snk</AssemblyOriginatorKeyFile>
+        <AssemblyName>Isag.Log2</AssemblyName>
+      </PropertyGroup>
+    </When>
+    <When Condition="'$(Configuration)' == 'Sql2014'">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>Resources\LOG_2014.snk</AssemblyOriginatorKeyFile>
+        <AssemblyName>Isag.Log3</AssemblyName>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>Resources\LOG.snk</AssemblyOriginatorKeyFile>
+        <AssemblyName>Isag.Log</AssemblyName>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Sql2008|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Sql2008\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SQL2008</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Sql2012|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Sql2012\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SQL2012</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Sql2014|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Sql2014\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SQL2014</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\log.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Sql2008'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualBasic" />
+        <Reference Include="System" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+        <Reference Include="Microsoft.SqlServer.Dts.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>Lib\2008\Microsoft.SqlServer.Dts.Design.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x64">
+          <SpecificVersion>True</SpecificVersion>
+          <EmbedInteropTypes>True</EmbedInteropTypes>
+          <Private>False</Private>
+          <HintPath>Lib\2008\x64\Microsoft.SQLServer.DTSRuntimeWrap.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>Lib\2008\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Configuration)' == 'Sql2012'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualBasic" />
+        <Reference Include="System" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+        <Reference Include="Microsoft.SqlServer.Dts.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>Lib\2012\Microsoft.SqlServer.Dts.Design.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x64">
+          <SpecificVersion>True</SpecificVersion>
+          <EmbedInteropTypes>True</EmbedInteropTypes>
+          <Private>False</Private>
+          <HintPath>Lib\2012\x64\Microsoft.SQLServer.DTSRuntimeWrap.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>Lib\2012\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Configuration)' == 'Sql2014'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualBasic" />
+        <Reference Include="System" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+        <Reference Include="Microsoft.SqlServer.Dts.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>Lib\2014\Microsoft.SqlServer.Dts.Design.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x64">
+          <SpecificVersion>True</SpecificVersion>
+          <EmbedInteropTypes>True</EmbedInteropTypes>
+          <Private>False</Private>
+          <HintPath>Lib\2014\x64\Microsoft.SQLServer.DTSRuntimeWrap.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>Lib\2014\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.SqlServer.Dts.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Dts.Design.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+          <SpecificVersion>False</SpecificVersion>
+          <EmbedInteropTypes>True</EmbedInteropTypes>
+          <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SQLServer.DTSRuntimeWrap.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualBasic" />
+        <Reference Include="System" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ComponentType.cs" />
+    <Compile Include="frmLogUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogUI.Designer.cs">
+      <DependentUpon>frmLogUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOG.cs" />
+    <Compile Include="LogUI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmLogUI.resx">
+      <DependentUpon>frmLogUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOG.snk" />
+    <None Include="Resources\LOG_2012.snk" />
+    <None Include="Resources\LOG_2014.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\log.ico">
+      <LogicalName>log.ico</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\2008\Microsoft.SqlServer.Dts.Design.dll" />
+    <Content Include="Lib\2008\Microsoft.SqlServer.ManagedDTS.dll" />
+    <Content Include="Lib\2008\x64\Microsoft.SqlServer.DTSRuntimeWrap.dll" />
+    <Content Include="Lib\2012\Microsoft.SqlServer.Dts.Design.dll" />
+    <Content Include="Lib\2012\Microsoft.SqlServer.ManagedDTS.dll" />
+    <Content Include="Lib\2012\x64\Microsoft.SqlServer.DTSRuntimeWrap.dll" />
+    <Content Include="Lib\2014\Microsoft.SqlServer.Dts.Design.dll" />
+    <Content Include="Lib\2014\Microsoft.SqlServer.ManagedDTS.dll" />
+    <Content Include="Lib\2014\x64\Microsoft.SqlServer.DTSRuntimeWrap.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
