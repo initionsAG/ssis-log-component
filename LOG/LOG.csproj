@@ -56,6 +56,12 @@
         <AssemblyName>Isag.Log3</AssemblyName>
       </PropertyGroup>
     </When>
+    <When Condition="'$(Configuration)' == 'Sql2016'">
+      <PropertyGroup>
+        <AssemblyOriginatorKeyFile>Resources\LOG_2014.snk</AssemblyOriginatorKeyFile>
+        <AssemblyName>initions.Henry.SSIS.Log2016</AssemblyName>
+      </PropertyGroup>
+    </When>
     <Otherwise>
       <PropertyGroup>
         <AssemblyOriginatorKeyFile>Resources\LOG.snk</AssemblyOriginatorKeyFile>
@@ -93,16 +99,27 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\log.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Sql2016|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Sql2016\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SQL2016</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(Configuration)' == 'Sql2008'">
       <ItemGroup>
-        <Reference Include="Microsoft.VisualBasic" />
-        <Reference Include="System" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Drawing" />
-        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-        <Reference Include="System.Windows.Forms" />
-        <Reference Include="System.Xml" />
         <Reference Include="Microsoft.SqlServer.Dts.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
           <SpecificVersion>True</SpecificVersion>
           <Private>False</Private>
@@ -123,13 +140,6 @@
     </When>
     <When Condition="'$(Configuration)' == 'Sql2012'">
       <ItemGroup>
-        <Reference Include="Microsoft.VisualBasic" />
-        <Reference Include="System" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Drawing" />
-        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-        <Reference Include="System.Windows.Forms" />
-        <Reference Include="System.Xml" />
         <Reference Include="Microsoft.SqlServer.Dts.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
           <SpecificVersion>True</SpecificVersion>
           <Private>False</Private>
@@ -150,13 +160,6 @@
     </When>
     <When Condition="'$(Configuration)' == 'Sql2014'">
       <ItemGroup>
-        <Reference Include="Microsoft.VisualBasic" />
-        <Reference Include="System" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Drawing" />
-        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-        <Reference Include="System.Windows.Forms" />
-        <Reference Include="System.Xml" />
         <Reference Include="Microsoft.SqlServer.Dts.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
           <SpecificVersion>True</SpecificVersion>
           <Private>False</Private>
@@ -175,15 +178,28 @@
         </Reference>
       </ItemGroup>
     </When>
+    <When Condition="'$(Configuration)' == 'Sql2016'">
+      <ItemGroup>
+        <Reference Include="Microsoft.SqlServer.Dts.Design, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>..\packages\Microsoft.SqlServer.DTS.13.0.0\lib\Microsoft.SqlServer.Dts.Design.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x64">
+          <SpecificVersion>True</SpecificVersion>
+          <EmbedInteropTypes>True</EmbedInteropTypes>
+          <Private>False</Private>
+          <HintPath>..\packages\Microsoft.SqlServer.DTS.13.0.0\lib\Microsoft.SQLServer.DTSRuntimeWrap.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+          <SpecificVersion>True</SpecificVersion>
+          <Private>False</Private>
+          <HintPath>..\packages\Microsoft.SqlServer.DTS.13.0.0\lib\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualBasic" />
-        <Reference Include="System" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Drawing" />
-        <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-        <Reference Include="System.Windows.Forms" />
-        <Reference Include="System.Xml" />
         <Reference Include="Microsoft.SqlServer.Dts.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
           <SpecificVersion>True</SpecificVersion>
           <Private>False</Private>
@@ -229,17 +245,15 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\log.ico">
+      <LogicalName>log.ico</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Resources\LOG.snk" />
     <None Include="Resources\LOG_2012.snk" />
     <None Include="Resources\LOG_2014.snk" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\log.ico">
-      <LogicalName>log.ico</LogicalName>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

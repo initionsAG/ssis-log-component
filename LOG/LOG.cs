@@ -34,6 +34,15 @@ namespace Isag.Log
         TaskContact          = "initions AG",
         RequiredProductLevel = DTSProductLevel.None
     )]
+#elif   (SQL2016)
+    [DtsTask(
+        DisplayName          = "LOG",
+        IconResource         = "log.ico",
+        UITypeName           = "Isag.Log.LogUI, initions.Henry.SSIS.Log2016, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6a4e053840a8eff7",
+        TaskType             = "PackageMaintenance",
+        TaskContact          = "initions AG",
+        RequiredProductLevel = DTSProductLevel.None
+    )]
 #else
     [DtsTask(DisplayName  = "LOG",
                 IconResource = "log.ico",

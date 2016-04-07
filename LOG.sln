@@ -24,6 +24,9 @@ Global
 		Sql2014|Any CPU = Sql2014|Any CPU
 		Sql2014|Mixed Platforms = Sql2014|Mixed Platforms
 		Sql2014|x86 = Sql2014|x86
+		Sql2016|Any CPU = Sql2016|Any CPU
+		Sql2016|Mixed Platforms = Sql2016|Mixed Platforms
+		Sql2016|x86 = Sql2016|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E60C8296-9418-4902-A35D-8EEAE8845396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -51,6 +54,11 @@ Global
 		{E60C8296-9418-4902-A35D-8EEAE8845396}.Sql2014|Mixed Platforms.ActiveCfg = Sql2014|Any CPU
 		{E60C8296-9418-4902-A35D-8EEAE8845396}.Sql2014|Mixed Platforms.Build.0 = Sql2014|Any CPU
 		{E60C8296-9418-4902-A35D-8EEAE8845396}.Sql2014|x86.ActiveCfg = Sql2014|Any CPU
+		{E60C8296-9418-4902-A35D-8EEAE8845396}.Sql2016|Any CPU.ActiveCfg = Sql2016|Any CPU
+		{E60C8296-9418-4902-A35D-8EEAE8845396}.Sql2016|Any CPU.Build.0 = Sql2016|Any CPU
+		{E60C8296-9418-4902-A35D-8EEAE8845396}.Sql2016|Mixed Platforms.ActiveCfg = Sql2016|Any CPU
+		{E60C8296-9418-4902-A35D-8EEAE8845396}.Sql2016|Mixed Platforms.Build.0 = Sql2016|Any CPU
+		{E60C8296-9418-4902-A35D-8EEAE8845396}.Sql2016|x86.ActiveCfg = Sql2016|Any CPU
 		{C65BE329-E49F-4529-B04B-951067C5CE65}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{C65BE329-E49F-4529-B04B-951067C5CE65}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{C65BE329-E49F-4529-B04B-951067C5CE65}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -79,6 +87,11 @@ Global
 		{C65BE329-E49F-4529-B04B-951067C5CE65}.Sql2014|Mixed Platforms.Build.0 = Release|x86
 		{C65BE329-E49F-4529-B04B-951067C5CE65}.Sql2014|x86.ActiveCfg = Release|x86
 		{C65BE329-E49F-4529-B04B-951067C5CE65}.Sql2014|x86.Build.0 = Release|x86
+		{C65BE329-E49F-4529-B04B-951067C5CE65}.Sql2016|Any CPU.ActiveCfg = Release|x86
+		{C65BE329-E49F-4529-B04B-951067C5CE65}.Sql2016|Mixed Platforms.ActiveCfg = Release|x86
+		{C65BE329-E49F-4529-B04B-951067C5CE65}.Sql2016|Mixed Platforms.Build.0 = Release|x86
+		{C65BE329-E49F-4529-B04B-951067C5CE65}.Sql2016|x86.ActiveCfg = Release|x86
+		{C65BE329-E49F-4529-B04B-951067C5CE65}.Sql2016|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
